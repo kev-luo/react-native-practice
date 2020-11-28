@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, FlatList, Text } from "react-native";
+import { FlatList } from "react-native";
 
 import TodoItem from './TodoItem';
 

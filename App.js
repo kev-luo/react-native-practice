@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 import TodoHeader from "./projects/todo/TodoHeader";
+import TodoForm from './projects/todo/TodoForm';
 import TodoList from "./projects/todo/TodoList";
 
 export default function App() {
@@ -17,11 +18,17 @@ export default function App() {
     });
   };
 
+  const handleSubmit = (todo) => {
+    setTodos(prevTodos => {
+      return [{text: todo, key: Math.random().toString()}, ...prevTodos]
+    })
+  }
+
   return (
     <View style={styles.container}>
       <TodoHeader />
       <View style={styles.content}>
-        {/* todo form */}
+        <TodoForm handleSubmit={handleSubmit}/>
         <View style={styles.list}>
           <TodoList pressHandler={pressHandler} todos={todos} />
         </View>
