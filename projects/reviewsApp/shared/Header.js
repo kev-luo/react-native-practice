@@ -2,15 +2,20 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
-export default function Header({navigation}) {
+export default function Header({ navigation, title }) {
   const handlePress = () => {
     navigation.openDrawer();
-  }
+  };
   return (
     <View style={styles.header}>
-      <MaterialIcons name="menu" size={28} style={styles.icon} onPress={handlePress}/>
+      <MaterialIcons
+        name="menu"
+        size={28}
+        style={styles.icon}
+        onPress={handlePress}
+      />
       <View>
-        <Text style={styles.headerText}>YEAH BOIIII</Text>
+        <Text style={styles.headerText}>{title}</Text>
       </View>
     </View>
   );
@@ -32,6 +37,6 @@ const styles = StyleSheet.create({
   },
   icon: {
     position: "absolute",
-    left: 16
-  }
+    left: 16,
+  },
 });

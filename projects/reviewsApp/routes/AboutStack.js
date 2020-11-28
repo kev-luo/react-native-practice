@@ -6,7 +6,7 @@ import Header from "../shared/Header";
 
 const { Navigator, Screen } = createStackNavigator();
 
-export const AboutStack = () => (
+export const AboutStack = ({ navigation }) => (
   <Navigator
     screenOptions={{
       headerStyle: { backgroundColor: "coral", height: 90 },
@@ -16,7 +16,9 @@ export const AboutStack = () => (
     <Screen
       name="About"
       component={About}
-      options={{ headerTitle: () => <Header /> }}
+      options={{
+        headerTitle: () => <Header navigation={navigation} title="About" />,
+      }}
     />
   </Navigator>
 );

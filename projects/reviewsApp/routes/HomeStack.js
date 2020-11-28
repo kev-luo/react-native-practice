@@ -6,18 +6,20 @@ import Header from "../shared/Header";
 
 const { Navigator, Screen } = createStackNavigator();
 
-export const HomeStack = ({navigation}) => (
+export const HomeStack = ({ navigation }) => (
   <Navigator
     initialRouteName="Home"
     screenOptions={{
       headerStyle: { backgroundColor: "coral", height: 90 },
-      headerTintColor: "green",
+      headerTintColor: "blue",
     }}
   >
     <Screen
       name="Home"
       component={Home}
-      options={{ headerTitle: () => <Header navigation={navigation} /> }}
+      options={{
+        headerTitle: () => <Header navigation={navigation} title="Game Zone" />,
+      }}
     />
     <Screen
       name="Reviews"
