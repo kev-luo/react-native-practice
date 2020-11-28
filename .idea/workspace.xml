@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c16a802c-f627-47fc-86d3-e2309118b1b9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/practiceProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/practiceProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/reviewsApp/screens/ReviewDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/projects/reviewsApp/screens/ReviewDetails.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,5 +36,11 @@
       <updated>1606574163355</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1487" y="132" width="1200" height="800" key="AVDManager" timestamp="1606604420212">
+      <screen x="-1920" y="1" width="1920" height="1040" />
+    </state>
+    <state x="-1487" y="132" width="1200" height="800" key="AVDManager/0.0.1920.1040/-1920.1.1920.1040@-1920.1.1920.1040" timestamp="1606604420212" />
   </component>
 </project>
