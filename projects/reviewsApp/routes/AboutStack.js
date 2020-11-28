@@ -5,10 +5,10 @@ import About from "../screens/About";
 
 const { Navigator, Screen } = createStackNavigator();
 
-export default function AboutStack() {
-  return (
-    <Navigator>
-      <Screen name="About" component={About} />
-    </Navigator>
-  );
-}
+export const AboutStack = () => (
+  <Navigator>
+    <Screen name="About" component={About} />
+  </Navigator>
+);
+
+export default AboutStack;
