@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Alert } from "react-native";
 
 import TodoHeader from "./projects/todo/TodoHeader";
-import TodoForm from './projects/todo/TodoForm';
+import TodoForm from "./projects/todo/TodoForm";
 import TodoList from "./projects/todo/TodoList";
 
 export default function App() {
@@ -19,16 +19,29 @@ export default function App() {
   };
 
   const handleSubmit = (todo) => {
-    setTodos(prevTodos => {
-      return [{text: todo, key: Math.random().toString()}, ...prevTodos]
-    })
-  }
+    if (todo.length > 3) {
+      setTodos((prevTodos) => {
+        return [{ text: todo, key: Math.random().toString() }, ...prevTodos];
+      });
+    } else {
+      Alert.alert("Oops!", "Todos must be more than 3 characters long", [
+        {
+          text: "Understood",
+          onPress: () => console.log("alert close"),
+        },
+        {
+          text: "No",
+          onPress: () => console.log("NO"),
+        }
+      ]);
+    }
+  };
 
   return (
     <View style={styles.container}>
       <TodoHeader />
       <View style={styles.content}>
-        <TodoForm handleSubmit={handleSubmit}/>
+        <TodoForm handleSubmit={handleSubmit} />
         <View style={styles.list}>
           <TodoList pressHandler={pressHandler} todos={todos} />
         </View>
