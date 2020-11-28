@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as Font from "expo-font";
-import Home from "./projects/reviewsApp/screens/Home";
 import { AppLoading } from "expo";
+import AppNavigator from './projects/reviewsApp/routes/AppNavigator';
 
 const getFonts = () =>
   Font.loadAsync({
@@ -12,10 +12,12 @@ const getFonts = () =>
 export default function App() {
   const [fontsLoaded, setFontsLoaded] = useState(false);
   if (fontsLoaded) {
-    return <Home />;
+    return (
+    <AppNavigator />
+    );
   } else {
     return (
-      <AppLoading startAsync={getFonts} onFinish={() => setFontsLoaded(true)} />
+      <AppLoading startAsync={getFonts} onFinish={() => setFontsLoaded(true)} onError={console.warn}/>
     );
   }
 }

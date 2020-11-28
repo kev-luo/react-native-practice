@@ -2,7 +2,8 @@ import { StyleSheet } from 'react-native';
 
 export const globalStyles = StyleSheet.create({
   container: {
-    flex: 1, // this ensures container views are taking up all available space on screen
+    // this ensures container views are taking up all available space on screen
+    flex: 1, 
     padding: 50
   },
   titleText: {
