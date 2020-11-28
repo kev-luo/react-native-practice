@@ -1,12 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from "react";
+import { StyleSheet, View } from "react-native";
+
+import TouchableFlatList from './components/TouchableFlatList';
 
 export default function App() {
+  const [people, setPeople] = useState([
+    { name: "shaun", id: 1 },
+    { name: "yoshi", id: 2 },
+    { name: "karan", id: 3 },
+    { name: "pankaj", id: 4 },
+    { name: "sk", id: 5 },
+    { name: "harry", id: 6 },
+    { name: "logan", id: 7 },
+  ]);
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <TouchableFlatList setPeople={setPeople} people={people} />
     </View>
   );
 }
@@ -14,8 +24,10 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    backgroundColor: "#fff",
+    paddingTop: 40,
+    paddingHorizontal: 20,
+    // alignItems: 'center',
+    // justifyContent: 'center',
+  }
 });
