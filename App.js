@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { StyleSheet, View, Text } from "react-native";
 
-import TodoHeader from './projects/todo/TodoHeader'
-import TodoList from './projects/todo/TodoList';
+import TodoHeader from "./projects/todo/TodoHeader";
+import TodoList from "./projects/todo/TodoList";
 
 export default function App() {
   const [todos, setTodos] = useState([
@@ -11,13 +11,19 @@ export default function App() {
     { text: "play on the switch", key: "3" },
   ]);
 
+  const pressHandler = (key) => {
+    setTodos((prevTodos) => {
+      return prevTodos.filter((todo) => todo.key !== key);
+    });
+  };
+
   return (
     <View style={styles.container}>
       <TodoHeader />
       <View style={styles.content}>
         {/* todo form */}
         <View style={styles.list}>
-          <TodoList todos={todos}/>
+          <TodoList pressHandler={pressHandler} todos={todos} />
         </View>
       </View>
     </View>
@@ -30,9 +36,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   content: {
-    padding: 40
+    padding: 40,
   },
   list: {
-    marginTop: 20
-  }
+    marginTop: 20,
+  },
 });

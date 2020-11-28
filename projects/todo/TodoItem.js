@@ -1,10 +1,11 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
-export default function TodoItem({ todo }) {
+export default function TodoItem({ todo, pressHandler }) {
+
   return (
-    <TouchableOpacity>
-      <Text style={styles.item}>{todo}</Text>
+    <TouchableOpacity onPress={() => pressHandler(todo.key)}>
+      <Text style={styles.item}>{todo.text}</Text>
     </TouchableOpacity>
   );
 }
