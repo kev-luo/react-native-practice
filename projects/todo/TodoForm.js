@@ -25,6 +25,7 @@ export default function TodoForm({setTodos}) {
         }
       ]);
     }
+    setTodo("")
   }
 
   return (
@@ -33,6 +34,7 @@ export default function TodoForm({setTodos}) {
         style={styles.input}
         placeholder="New todo..."
         onChangeText={(val) => changeHandler(val)}
+        value={todo}
       />
       <Button onPress={() => handleSubmit(todo)} title="add todo" color="coral" />
     </View>

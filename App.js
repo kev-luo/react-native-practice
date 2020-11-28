@@ -9,6 +9,7 @@ import {
 import TodoHeader from "./projects/todo/TodoHeader";
 import TodoForm from "./projects/todo/TodoForm";
 import TodoList from "./projects/todo/TodoList";
+import Sandbox from './projects/todo/sandbox';
 
 export default function App() {
   const [todos, setTodos] = useState([
@@ -24,6 +25,7 @@ export default function App() {
   };
 
   return (
+    // <Sandbox />
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <View style={styles.container}>
         <TodoHeader />
@@ -44,9 +46,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   content: {
+    flex: 1,
     padding: 40,
   },
   list: {
     marginTop: 20,
+    flex: 1,
   },
 });
