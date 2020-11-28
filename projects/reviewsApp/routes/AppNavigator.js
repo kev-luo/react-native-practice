@@ -10,9 +10,9 @@ const { Navigator, Screen } = createStackNavigator();
 
 function HomeNavigator() {
   return (
-    <Navigator initialRouteName="Home">
+    <Navigator initialRouteName="Home" screenOptions={{headerStyle: { backgroundColor: "coral", height: 60}, headerTintColor: "green"}}>
       <Screen name="Home" component={Home} />
-      <Screen name="Reviews" component={ReviewDetails} />
+      <Screen name="Reviews" component={ReviewDetails} options={{title: "Review Details"}}/>
     </Navigator>
   );
 }
